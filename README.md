@@ -2,11 +2,12 @@
 
 CP II - **Java Advanced** aplicado em 29/04/2024.
 
-| ![](documentos/fiap.jpg)                 | **Java Advanced** |
-|------------------------------------------|-------------------|
-| **ALUNO:**                               | **TURMA:** 2TDSPF |
-| **PROFESSOR:** Benefrancis do Nascimento | 29/04/2024        |
-| **CP II**                                | ****              |
+| ![](documentos/fiap.jpg)                             | **Java Advanced** |
+|------------------------------------------------------|-------------------|
+| **ALUNO:** RM:98626 NOME: Gabriel Siqueira Rodrigues | **TURMA:** 2TDSPF |
+| **ALUNO:** RM:551408 NOME: Juan de Godoy             | **TURMA:** 2TDSPF |
+| **PROFESSOR:** Benefrancis do Nascimento             | 29/04/2024        |
+| **CP II**                                            | ****              |
 
 # Sumário
 
