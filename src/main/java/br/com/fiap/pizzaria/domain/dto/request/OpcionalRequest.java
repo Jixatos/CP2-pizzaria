@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
-public record OptionalRequest(
+public record OpcionalRequest(
         @NotNull(message = "O nome é um campo obrigatório")
         String nome,
         AbstractRequest sabor,
