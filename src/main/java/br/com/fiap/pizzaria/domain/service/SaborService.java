@@ -10,40 +10,48 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 @Service
-public class SaborService implements ServiceDTO<Sabor, SaborRequest, SaborResponse>{
+public class SaborService implements ServiceDTO<Sabor, SaborRequest, SaborResponse> {
 
     @Autowired
     private SaborRepository repo;
 
     @Override
     public Collection<Sabor> findAll() {
-        return List.of();
+        return repo.findAll();
     }
 
     @Override
     public Collection<Sabor> findAll(Example<Sabor> example) {
-        return List.of();
+        return repo.findAll(example);
     }
 
     @Override
     public Sabor findById(Long id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public Sabor save(Sabor e) {
-        return null;
+        return repo.save(e);
     }
 
     @Override
     public Sabor toEntity(SaborRequest dto) {
-        return null;
+        return Sabor.builder()
+                .nome(Objects.isNull(dto.nome()) ? null : dto.nome())
+                .descricao(Objects.isNull(dto.descricao()) ? null : dto.descricao())
+                .build();
     }
 
     @Override
     public SaborResponse toResponse(Sabor e) {
-        return null;
+        return SaborResponse.builder()
+                .id(e.getId())
+                .nome(e.getNome())
+                .descricao(e.getDescricao())
+                .build();
     }
 }
