@@ -9,8 +9,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
 
 @Service
 public class SaborService implements ServiceDTO<Sabor, SaborRequest, SaborResponse> {
@@ -39,10 +37,10 @@ public class SaborService implements ServiceDTO<Sabor, SaborRequest, SaborRespon
     }
 
     @Override
-    public Sabor toEntity(SaborRequest dto) {
+    public Sabor toEntity(SaborRequest r) {
         return Sabor.builder()
-                .nome(Objects.isNull(dto.nome()) ? null : dto.nome())
-                .descricao(Objects.isNull(dto.descricao()) ? null : dto.descricao())
+                .nome(r.nome())
+                .descricao(r.descricao())
                 .build();
     }
 

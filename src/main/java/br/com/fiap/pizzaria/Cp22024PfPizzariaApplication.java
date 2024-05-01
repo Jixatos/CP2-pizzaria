@@ -20,14 +20,14 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class Cp22024PfPizzariaApplication implements CommandLineRunner {
 
-    private static final Logger log = LoggerFactory.getLogger( Cp22024PfPizzariaApplication.class );
+    private static final Logger log = LoggerFactory.getLogger(Cp22024PfPizzariaApplication.class);
 
     @Autowired
     private PizzariaRepository pizzariaRepository;
 
 
     public static void main(String[] args) {
-        SpringApplication.run( Cp22024PfPizzariaApplication.class, args );
+        SpringApplication.run(Cp22024PfPizzariaApplication.class, args);
     }
 
 
@@ -37,114 +37,114 @@ public class Cp22024PfPizzariaApplication implements CommandLineRunner {
 
         long pizzarias = pizzariaRepository.count();
 
-        log.info( "Existem {} pizzarias Cadastradas", pizzarias );
+        log.info("Existem {} pizzarias Cadastradas", pizzarias);
 
         if (pizzariaRepository.count() < 1) {
-            log.info( "Criando a primeira pizzaria da Rede" );
+            log.info("Criando a primeira pizzaria da Rede");
             criaDonBenezinho();
         }
     }
 
     private void criaDonBenezinho() {
         var mucarela = Sabor.builder()
-                .nome( "Muçarela" )
-                .descricao( "Delicionsa muçarela" )
+                .nome("Muçarela")
+                .descricao("Delicionsa muçarela")
                 .build();
 
         var calabresa = Sabor.builder()
-                .nome( "Calabresa" )
-                .descricao( "Saborosa calabresa" )
+                .nome("Calabresa")
+                .descricao("Saborosa calabresa")
                 .build();
 
         var calabresaComMucarela = Sabor.builder()
-                .nome( "Calabresa com Muçarela" )
-                .descricao( "A combinação perfeita da nossa saborosa calabresa com o queijo muçarela de arrancar suspiros" )
+                .nome("Calabresa com Muçarela")
+                .descricao("A combinação perfeita da nossa saborosa calabresa com o queijo muçarela de arrancar suspiros")
                 .build();
 
         var cola = Sabor.builder()
-                .nome( "Cola" )
+                .nome("Cola")
                 .build();
 
         var laranja = Sabor.builder()
-                .nome( "Laranja" )
+                .nome("Laranja")
                 .build();
 
         var guarana = Sabor.builder()
-                .nome( "Guarana" )
+                .nome("Guarana")
                 .build();
 
         var uva = Sabor.builder()
-                .nome( "Uva" )
+                .nome("Uva")
                 .build();
         var limao = Sabor.builder()
-                .nome( "Limão" )
+                .nome("Limão")
                 .build();
 
         var catupiri = Sabor.builder()
-                .nome( "Catupiri" )
+                .nome("Catupiri")
                 .build();
 
         var cocaCola = Opcional.builder()
-                .nome( "Coca-Cola" )
-                .sabor( cola )
-                .preco( BigDecimal.valueOf( 19.99 ) )
+                .nome("Coca-Cola")
+                .sabor(cola)
+                .preco(BigDecimal.valueOf(19.99))
                 .build();
 
         var sprite = Opcional.builder()
-                .nome( "Sprite" )
-                .sabor( limao )
-                .preco( BigDecimal.valueOf( 12.99 ) )
+                .nome("Sprite")
+                .sabor(limao)
+                .preco(BigDecimal.valueOf(12.99))
                 .build();
 
         var fantaLaranja = Opcional.builder()
-                .nome( "Fanta" )
-                .sabor( laranja )
-                .preco( BigDecimal.valueOf( 12.99 ) )
+                .nome("Fanta")
+                .sabor(laranja)
+                .preco(BigDecimal.valueOf(12.99))
                 .build();
 
         var fantaUva = Opcional.builder()
-                .nome( "Fanta" )
-                .sabor( uva )
-                .preco( BigDecimal.valueOf( 12.99 ) )
+                .nome("Fanta")
+                .sabor(uva)
+                .preco(BigDecimal.valueOf(12.99))
                 .build();
 
         var bordaDeCatupiri = Opcional.builder()
-                .nome( "Borda de Catupiri" )
-                .sabor( catupiri )
-                .preco( BigDecimal.valueOf( 9.99 ) )
+                .nome("Borda de Catupiri")
+                .sabor(catupiri)
+                .preco(BigDecimal.valueOf(9.99))
                 .build();
 
-        var opcionais = Arrays.asList( cocaCola, fantaUva, fantaLaranja, sprite, bordaDeCatupiri );
+        var opcionais = Arrays.asList(cocaCola, fantaUva, fantaLaranja, sprite, bordaDeCatupiri);
 
         var pizzaMucarela = Produto.builder()
-                .nome( "Pizza" )
-                .sabor( mucarela )
-                .preco( BigDecimal.valueOf( 59.99 ) )
-                .opcionais( opcionais.stream().collect( Collectors.toSet() ) )
+                .nome("Pizza")
+                .sabor(mucarela)
+                .preco(BigDecimal.valueOf(59.99))
+                .opcionais(opcionais.stream().collect(Collectors.toSet()))
                 .build();
 
         var pizzaCalabresa = Produto.builder()
-                .nome( "Pizza" )
-                .sabor( calabresa )
-                .preco( BigDecimal.valueOf( 59.99 ) )
-                .opcionais( opcionais.stream().collect( Collectors.toSet() ) )
+                .nome("Pizza")
+                .sabor(calabresa)
+                .preco(BigDecimal.valueOf(59.99))
+                .opcionais(opcionais.stream().collect(Collectors.toSet()))
                 .build();
 
         var pizzaCalabresaComMucarela = Produto.builder()
-                .nome( "Pizza" )
-                .sabor( calabresaComMucarela )
-                .preco( BigDecimal.valueOf( 59.99 ) )
-                .opcionais( opcionais.stream().collect( Collectors.toSet() ) )
+                .nome("Pizza")
+                .sabor(calabresaComMucarela)
+                .preco(BigDecimal.valueOf(59.99))
+                .opcionais(opcionais.stream().collect(Collectors.toSet()))
                 .build();
 
-        var cardapio = Arrays.asList( pizzaMucarela, pizzaCalabresa, pizzaCalabresaComMucarela );
+        var cardapio = Arrays.asList(pizzaMucarela, pizzaCalabresa, pizzaCalabresaComMucarela);
 
         var pizzariaDonBenezinho = Pizzaria.builder()
-                .nome( "Don Benezinho" )
-                .cardapio( cardapio.stream().collect( Collectors.toSet() ) )
+                .nome("Don Benezinho")
+                .cardapio(cardapio.stream().collect(Collectors.toSet()))
                 .build();
 
-        pizzariaRepository.save( pizzariaDonBenezinho );
+        pizzariaRepository.save(pizzariaDonBenezinho);
     }
 
 }

@@ -1,5 +1,6 @@
 package br.com.fiap.pizzaria.domain.resource;
 
+import org.springframework.data.domain.Example;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Collection;
