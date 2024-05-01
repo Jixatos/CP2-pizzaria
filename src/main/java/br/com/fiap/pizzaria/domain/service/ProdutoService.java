@@ -3,39 +3,65 @@ package br.com.fiap.pizzaria.domain.service;
 import br.com.fiap.pizzaria.domain.dto.request.ProdutoRequest;
 import br.com.fiap.pizzaria.domain.dto.response.ProdutoResponse;
 import br.com.fiap.pizzaria.domain.entity.Produto;
+import br.com.fiap.pizzaria.domain.repository.ProdutoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 
-public class ProdutoService implements ServiceDTO<Produto, ProdutoResponse, ProdutoRequest>{
+@Service
+public class ProdutoService implements ServiceDTO<Produto, ProdutoRequest, ProdutoResponse> {
+
+    @Autowired
+    private ProdutoRepository repo;
+
+    @Autowired
+    private SaborService saborService;
+
+    @Autowired
+    private ProdutoService produtoService;
+
     @Override
     public Collection<Produto> findAll() {
-        return List.of();
+        return repo.findAll();
     }
 
     @Override
     public Collection<Produto> findAll(Example<Produto> example) {
-        return List.of();
+        return repo.findAll(example);
     }
 
     @Override
     public Produto findById(Long id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public Produto save(Produto e) {
-        return null;
+        return repo.save(e);
     }
 
     @Override
-    public Produto toEntity(ProdutoResponse dto) {
-        return null;
+    public Produto toEntity(ProdutoRequest r) {
+        var sabor = saborService.findById(r.sabor().id());
+
+        return Produto.builder()
+                .nome(r.nome())
+                .preco(r.preco())
+                .sabor(sabor)
+                .opcionais() // Necessário tratar por se tratar de um Set<>
+                .build();
     }
 
     @Override
-    public ProdutoRequest toResponse(Produto e) {
-        return null;
+    public ProdutoResponse toResponse(Produto e) {
+        return ProdutoResponse.builder()
+                .id(e.getId())
+                .nome(e.getNome())
+                .preco(e.getPreco())
+                .sabor(saborService.toResponse(e.getSabor()))
+                .opcionais()  // Necessário tratar por se tratar de um Set<>
+                .build();
     }
 }
