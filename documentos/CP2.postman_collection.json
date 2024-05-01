@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "01296612-5879-4822-878f-98cbd18b054d",
+		"name": "CP2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33457093",
+		"_collection_link": "https://solar-moon-475177.postman.co/workspace/Team-Workspace~81ac13a9-5f92-4163-8273-69d2de756a88/collection/34600251-01296612-5879-4822-878f-98cbd18b054d?action=share&source=collection_link&creator=33457093"
+	},
+	"item": [
+		{
+			"name": "SaborResource",
+			"item": [
+				{
+					"name": "sabores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/sabores",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"sabores"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "sabores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/sabores",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"sabores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sabores/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/sabores/{id}",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"sabores",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OpcionaisResource",
+			"item": [
+				{
+					"name": "opcionais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/opcionais",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"opcionais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "opcionais/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/opcionais/{id}",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"opcionais",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "opcionais",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/opcionais",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"opcionais"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProdutoResource",
+			"item": [
+				{
+					"name": "produtos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/produtos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/produtos",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/produtos/{id}",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"produtos",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos/id/opcionais",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/produtos/{id}/opcionais",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"produtos",
+								"{id}",
+								"opcionais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos/id/opcionais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/produtos/{id}/opcionais",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"produtos",
+								"{id}",
+								"opcionais"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PizzariaResource",
+			"item": [
+				{
+					"name": "pizzarias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/pizzarias",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pizzarias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pizzarias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pizzarias",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pizzarias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pizzarias/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pizzarias/{id}",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pizzarias",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pizzarias/id/cardapio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/pizzarias/{id}/cardapio",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pizzarias",
+								"{id}",
+								"cardapio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pizzarias/id/cardapio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pizzarias/{id}/cardapio",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pizzarias",
+								"{id}",
+								"cardapio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
